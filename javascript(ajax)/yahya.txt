@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <button onclick="getData()">Get Data</button>
+ <div id="show"></div>
+    <script>
+
+   function getData(){
+
+    var myRequest = new XMLHttpRequest();
+   myRequest.onreadystatechange = function(){
+
+    //console.log(this.status); 
+
+    if(this.readyState ===4 && this.status===200){
+        //console.log(this.responseText);
+
+
+        //convert respnseText to js object
+        var jsonobject = JSON.parse(this.responseText);
+        mytext = '';
+
+        for(i=0 ; i<jsonobject.length ; i++){
+
+            console.log(jsonobject[i].username);
+        }
+
+        }
+    }
+    
+   
+   };
+
+  myRequest.open("GET" , "object.json" , true);
+  myRequest.send();
+   
+
+
+   
+    </script>
+    
+</body>
+</html>

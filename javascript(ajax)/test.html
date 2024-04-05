@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="GetData()">Get Data</button>
+    <div id="show"></div>
+    <script>
+
+   function GetData(){
+    var Request = new XMLHttpRequest();
+
+    Request.onreadystatechange = function(){
+
+     if(this.readyState ===4 && this.status){
+
+       var myobject = this.responseText;
+       console.log(myobject);
+
+       //var myjs = JSON.parse(this.responseText);
+       //var text = '';
+       //for(i=0 ; i<myjs.length ; i++){
+        //text +=myjs[i].age + "<br>"
+       //}
+
+
+
+       document.getElementById("show").innerHTML =myobject;
+
+
+
+     }
+
+    }
+
+    Request.open("Post" , "object.php" , true);
+    Request.send();
+
+   }
+
+    </script>
+</body>
+</html>

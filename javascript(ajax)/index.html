@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="getData()">Get Data</button>
+    <div id="show"></div> -->
+
+    <!-- <script>
+         
+       function getData(){
+
+
+        var myRequest = new XMLHttpRequest();
+        myRequest.onreadystatechange = function(){
+
+
+        if(this.readyState === 4 && this.status ===200){
+           
+           //console.log(this.responseText);
+
+           var myobject = JSON.parse(this.responseText);
+            
+           var mytext = '';
+
+           for(i=0 ; i<myobject.length ; i++){
+
+            console.log(myobject[i].username);
+            mytext +=myobject[i].username+"<br>"
+            console.log(mytext);
+
+            document.getElementById("show").innerHTML = mytext;
+           }
+
+        }
+
+        }
+
+        myRequest.open("GET" , "object.json" , true);
+        myRequest.send();
+       }
+    </script> -->
+
+    <script src="test.js"></script>
+</body>
+</html>
